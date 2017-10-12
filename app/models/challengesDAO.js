@@ -11,8 +11,8 @@ challengesDAO.prototype.getChallenges = function(callback){
 }
 
 challengesDAO.prototype.salvar = function(challenges, callback){
-    this._connection.query('INSERT INTO challenges SET ?', challenges, callback);
-    console.log(challenges);
+   var result = this._connection.query('INSERT INTO challenges SET ?', challenges, callback);
+    console.log(result);
 }
 
 module.exports = function(){    
