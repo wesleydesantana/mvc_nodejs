@@ -1,0 +1,39 @@
+<% include ../header %>
+<% include ../sidebar %>
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/">dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">perfil</li>
+      </ol>
+      <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12">
+              <div class="well">
+                  <div class="row">
+                      <div class="col-sm-6 col-md-6">
+                          <img class="rounded-circle" src="images/user_small.png" alt="" class="img-rounded img-responsive" />
+                      </div>
+                        
+                      <div class="col-sm-6 col-md-6">
+                          <h4>
+                              <%=users[0].name %></h4>
+                          <small><cite title="São Paulo - SP">São Paulo - SP <i class="glyphicon glyphicon-map-marker">
+                          </i></cite></small>
+                          <p>
+                              <i class="glyphicon glyphicon-envelope"></i><%=users[0].email %></h4>
+                              <br />
+                              <i class="glyphicon glyphicon-globe"></i><a href="https://github.com/wesleydesantana">github.com/wesleydesantana</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  
+    
+    </div>
+  </div>
+    <!-- /.content-wrapper-->
+    <% include ../footer %>

@@ -1,0 +1,44 @@
+<% include ../header %>
+<% include ../sidebar %>
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/">dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">challenges</li>
+        <a  href="/cadastrar-challenge" class="btn btn-sm btn-primary pull-right">Criar Challenge</a>
+      </ol>
+      <!-- Icon Cards-->
+      
+      <div class="row">
+
+        <% for(var i=0; i < challenges.length; i++){ %>
+        <div class="col">
+          <div class="card mb-3">
+            <a href="#">
+              <img class="card-img-top img-fluid w-100" src="images/hackathon.jpeg" alt="">
+            </a>
+            <div class="card-body">
+              <h6 class="card-title mb-1"><a href="#"><%=challenges[i].name %></a></h6>
+              <p class="card-text small"><%=challenges[i].description %>
+              </p>
+            </div>
+            <hr class="my-0">
+            <div class="card-body py-2 small">
+              <a class="mr-3 d-inline-block" href="#">
+                <i class="fa fa-fw fa-eye"></i>Detalhes</a>
+            </div>
+            <div class="card-footer small text-muted">Iníco <%=challenges[i].start_date %></div>
+          </div>
+        </div>
+        <% } %>
+        
+      </div>
+     
+    </div>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+
+<% include ../footer %>

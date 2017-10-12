@@ -1,0 +1,34 @@
+<% include ../header %>
+<% include ../sidebar %>
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/">dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">users</li>
+      </ol>
+      <!-- Icon Cards-->
+      
+      <div class="row">
+        <div class="col-md-12">
+            <div class="list-group list-group-flush small">
+              <% for(var i=0; i < users.length; i++){ %>                  
+              <a id="list-group-item" class="list-group-item list-group-item-action" href="#">
+                <div class="media">
+                  <img class="d-flex mr-3 rounded-circle" src="images/user.png" alt="">
+                  <div class="media-body">
+                      <h4 class="media-heading"><strong><%=users[i].name %></strong></h4>
+                    <strong><%=users[i].email %></strong>
+                  </div>
+                </div>
+              </a>
+              <% } %>    
+            </div>
+      </div>
+     
+    </div>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+<% include ../footer %>
