@@ -1,7 +1,7 @@
 module.exports.index = function(application, req, res){
     var connection = application.config.dbConnection();
     var challengeModel = new application.app.models.challengesDAO(connection);
-    challengeModel.getChallenges(function(error, result){
+    challengeModel.getAll(function(error, result){
         res.render('challenges/index', {challenges: result});
     });
     
@@ -27,7 +27,7 @@ module.exports.cadastrar_challenge = function(application, req, res){
     var connection = application.config.dbConnection();
     var challengeModel = new application.app.models.challengesDAO(connection); 
     
-    challengeModel.salvar(challenges, function(error, result){    
+    challengeModel.create(challenges, function(error, result){    
       res.redirect('/challenges');
     });
 };
