@@ -1,18 +1,18 @@
 module.exports.index = function(application, req, res){
     var connection = application.config.dbConnection();
-    var model = new application.app.models.projectsDAO(connection);
-        model.getAll(function(error, result){
-        res.render('projects/index', {projects: result});
+    var model = new application.app.models.labsDAO(connection);
+    model.getAll(function(error, result){
+        res.render('labs/index', {labs: result});
     });
     
 }
 
 module.exports.form = function(application, req, res){
-    res.render('projects/cadastro', {validacao: {}, projects: {}});
+    res.render('labs/cadastro', {validacao: {}, labs: {}});
 }
 
 module.exports.cadastrar = function(application, req, res){
-    var projects = req.body;
+    var labs = req.body;
     req.assert('name', 'Nome é obrigatorio').notEmpty();
     req.assert('description', 'Descrição é obrigatorio').notEmpty();
   
@@ -21,14 +21,14 @@ module.exports.cadastrar = function(application, req, res){
     console.log(erros);
   
     if (erros){
-      res.render('projects/cadastro', {validacao: erros, projects: projects});
+      res.render('labs/cadastro', {validacao: erros, labs: labs});
       return;
     }
   
     var connection = application.config.dbConnection();
-    var model = new application.app.models.projectsDAO(connection); 
+    var model = new application.app.models.labsDAO(connection); 
     
-    model.create(projects, function(error, result){    
-      res.redirect('/projetos');
+    model.create(labs, function(error, result){    
+      res.redirect('/labs');
     });
 }

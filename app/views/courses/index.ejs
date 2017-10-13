@@ -1,0 +1,43 @@
+<% include ../header %>
+<% include ../sidebar %>
+<div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/">dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">cursos</li>
+        <a  href="/cadastrar-cursos" class="btn btn-sm btn-primary pull-right">Criar Curso</a>
+      </ol>
+      <!-- Icon Cards-->
+      <% if(courses.length > 0) { %>
+        
+      <div class="row">
+        <% for(var i=0; i < courses.length; i++){ %>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="card mb-3">
+            <a href="#">
+              <img class="card-img-top img-fluid w-100" src="images/hackathon.jpeg" alt="">
+            </a>
+            <div class="card-body">
+              <h6 class="card-title mb-1"><a href="#"><%=courses[i].name %></a></h6>
+              <p class="card-text small"><%=courses[i].description %>
+              </p>
+            </div>
+            <hr class="my-0">
+            <div class="card-body py-2 small">
+              <a class="mr-3 d-inline-block" href="#">
+                <i class="fa fa-fw fa-eye"></i>Detalhes</a>
+            </div>
+          </div>
+        </div>
+        <% } %>
+      </div>
+      <% } %>
+    <!-- /.container-fluid-->
+    </div>
+<!-- /.content-wrapper-->
+</div>
+
+<% include ../footer %>
