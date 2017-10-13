@@ -3,25 +3,6 @@
 # Generator: MySQL-Front 6.0  (Build 2.20)
 
 
-#
-# Structure for table "certificate_buy"
-#
-
-DROP TABLE IF EXISTS `certificate_buy`;
-CREATE TABLE `certificate_buy` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_participant` int(11) NOT NULL,
-  `id_challenge` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `id_participant` (`id_participant`),
-  KEY `id_challenge` (`id_challenge`),
-  CONSTRAINT `certificate_buy_ibfk_1` FOREIGN KEY (`id_participant`) REFERENCES `participants` (`id_participant`),
-  CONSTRAINT `certificate_buy_ibfk_2` FOREIGN KEY (`id_challenge`) REFERENCES `challenges` (`id_challenge`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-#
-# Data for table "certificate_buy"
-#
 
 
 #
@@ -201,3 +182,22 @@ CREATE TABLE `certificate` (
 # Data for table "certificate"
 #
 
+#
+# Structure for table "certificate_buy"
+#
+
+DROP TABLE IF EXISTS `certificate_buy`;
+CREATE TABLE `certificate_buy` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_participant` int(11) NOT NULL,
+  `id_challenge` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_participant` (`id_participant`),
+  KEY `id_challenge` (`id_challenge`),
+  CONSTRAINT `certificate_buy_ibfk_1` FOREIGN KEY (`id_participant`) REFERENCES `participants` (`id_participant`),
+  CONSTRAINT `certificate_buy_ibfk_2` FOREIGN KEY (`id_challenge`) REFERENCES `challenges` (`id_challenge`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+#
+# Data for table "certificate_buy"
+#
